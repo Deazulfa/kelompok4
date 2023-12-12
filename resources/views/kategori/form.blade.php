@@ -1,5 +1,3 @@
-@extends('layout.main')
-
 @section('content')
 <main>
     <div class="container-fluid px-4">
@@ -51,20 +49,15 @@
         }
     </style>
 <body>
-    <form>
-        <label for="namabarang">NAMA PRODUK/BARANG</label>
-        <input type="text" id="namabarang" name="namabarang" required>
+    <form action="{{ isset($kategori) ? route('kategori.tambah.update',$kategori->id): route('kategori.tambah.simpan') }}" method="post">
+        @csrf
+        <label for="kode_kategori">Kode Kategori:</label>
+        <input type="text" id="kode_kategori" name="kode_kategori" required>
 
-        <label for="stok">STOK</label>
-        <input type="text" id="stok" name="stok" required>
+        <label for="nama_kategori">Nama Kategori:</label>
+        <input type="text" id="nama_kategori" name="nama_kategori" required>
 
-        <label for="hargajual">HARGA JUAL</label>
-        <input type="text" id="hargajual" name="hargajual" required>
-
-        <label for="hargabeli">HARGA BELI</label>
-        <input type="text" id="hargabeli" name="hargabeli" required>
-
-        <a class="btn btn-primary" type="submit" href="/produk">Submit</a>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     
 </body>
@@ -85,5 +78,5 @@
         cell1.innerHTML = kategoriName;
         document.getElementById('kategoriName').value = '';}
 </script>
-@endsection
+
 

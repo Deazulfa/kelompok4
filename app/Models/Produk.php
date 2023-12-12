@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Produk extends Model
 {
-    protected $table = 'kategori'; 
-    protected $fillable = ['kode_kategori','nama_kategori'];
+    protected $table = 'produk'; 
+    protected $fillable = ['kode_produk','nama_produk','stok_produk','harga_jual','harga_beli'];
 
     public $timestamps = true;
 

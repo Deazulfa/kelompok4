@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,6 @@ Route::get('/kasir', function () {
         'title' => 'Kasir'
     ]);
 });
-
 
 Route::get('/nota', function () {
     return view('nota_belanja', [
@@ -81,6 +81,20 @@ Route::get('/produk', function () {
     ]);
 });
 
-Route::post('/simpan_kategori', 'KategoriController@simpan');
-Route::get('/kategori/store', [KategoriController::class, 'store'])->name('kategori.store');
-Route::get('/input_data/store', [InputdataController::class, 'store'])->name('input_data.store');
+Route::controller(KategoriController::class)->prefix('kategori')->group(function() {
+    Route::get('','index')->name('kategori');
+    Route::get('tambah','tambah')->name('kategori.tambah');
+    Route::post('tambah','simpan')->name('kategori.tambah.simpan');
+    Route::get('edit/{id}','edit')->name('kategori.edit');
+    Route::put('edit/{id}','update')->name('kategori.tambah.update');
+    Route::get('hapus/{id}','hapus')->name('kategori.hapus');
+});
+
+Route::controller(ProdukController::class)->prefix('produk')->group(function() {
+    Route::get('','index')->name('produk');
+    Route::get('tambah','tambah')->name('produk.tambah');
+    Route::post('tambah','simpan')->name('produk.tambah.simpan');
+    Route::get('edit/{id}','edit')->name('produk.edit');
+    Route::put('edit/{id}','update')->name('produk.tambah.update');
+    Route::get('hapus/{id}','hapus')->name('produk.hapus');
+});
