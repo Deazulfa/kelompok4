@@ -1,10 +1,10 @@
-@extends('layout.main');
+@extends('layout.main')
 
 @section('content')
 <main>
     <div class="container-fluid px-4">
     <div class="container mt-5">
-    <title>Input Data Barang</title>
+    <title>Input Data Barang Restock</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,20 +51,39 @@
         }
     </style>
 <body>
-    <form>
-        <label for="productName">Nama Barang:</label>
-        <input type="text" id="productName" name="productName" required>
+    <form action='{{ url('restock') }}' method='post'>
+        <label for="idstock">Id Stok</label>
+        <input type="text" id="idstock" name="idstock" required>
 
-        <label for="productDescription">Harga Barang:</label>
-        <input type="text" id="productDescription" name="productDescription" required>
+        <label for="namabarang">Nama Barang</label>
+        <input type="text" id="namabarang" name="namabarang" required>
 
-        <label for="productQuantity">Stock:</label>
-        <input type="number" id="productQuantity" name="productQuantity" required>
+        <label for="namakategori">Nama Kategori</label>
+        <input type="text" id="namakategori" name="namakategori" required>
 
-        <button type="submit">Submit</button>
+        <label for="stock">Stock</label>
+        <input type="text" id="stock" name="Stock" required>
+
+        <a class="btn btn-primary" type="submit" href="/restock">Submit</a>
     </form>
+    
 </body>
 </div>
 </div>
 </main>
+
+<script>
+    function addItem() {
+        var restockName = document.getElementById('restockName').value;
+        var itemList = document.getElementById('itemList');
+        var row = itemList.insertRow();
+        
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = kategoriName;
+        document.getElementById('restockName').value = '';}
+</script>
 @endsection
+
