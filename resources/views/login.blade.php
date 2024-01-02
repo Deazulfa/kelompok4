@@ -10,52 +10,64 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+
+    <style>
+        .btn-primary{
+            background-color: #404040 !important; 
+            border: none; 
+            border-radius: 20px; 
+            width: 130px;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+            transform-origin: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #6e6e6e !important;
+            transform: scale(1.1);
+        }
+    </style>
+    
+    <body class="bg">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
                     <div class="container">
+                        <div class="mt-5">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                                <label for="inputEmail">Email address</label>
+                            <div class="col-lg-5 mt-5">
+                                <div class="card shadow-lg border-5 rounded-lg mt-5">
+                                    <div class="card-header">
+                                        <img src="{{ asset('image/toko.svg') }}" alt="images" style="max-width: 60px; display: block; margin: 0 auto;" />
+                                        <h4 class="text-center font-weight-light my-1">TOKO INDAH KAYLA</h4>
+                                    </div>
+                                    <div class="card-body mt-4">
+                                        <form method="POST" action="{{ route('login') }}">
+                                            @csrf
+                                            <div class="form-floating mb-4">
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="email" name="email" />
+                                                <label for="inputEmail">Email</label>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                            <div class="form-floating mb-4">
+                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-primary" href="/home">Login</a>
+                                            
+                                            <div class="row mb-4">
+                                                <div class="col-md-12 d-flex justify-content-center mx-auto offset-md-12 mt-2">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        {{ __('LOGIN') }}
+                                                    </button>
+                                                </div>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </main>
-            </div>
-            <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Kelompok4</div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+                </div>
+            </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
     </body>

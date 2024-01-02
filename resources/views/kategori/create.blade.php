@@ -51,20 +51,13 @@
         }
     </style>
 <body>
-    <form>
-        <label for="namabarang">NAMA PRODUK/BARANG</label>
-        <input type="text" id="namabarang" name="namabarang" required>
+    <form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data">
+        @csrf
+        <label for="kategoriName">Nama Kategori:</label>
+        <input type="text" id="kategoriName" name="nama_kategori" required>
 
-        <label for="stok">STOK</label>
-        <input type="text" id="stok" name="stok" required>
-
-        <label for="hargajual">HARGA JUAL</label>
-        <input type="text" id="hargajual" name="hargajual" required>
-
-        <label for="hargabeli">HARGA BELI</label>
-        <input type="text" id="hargabeli" name="hargabeli" required>
-
-        <a class="btn btn-primary" type="submit" href="/produk">Submit</a>
+        {{-- <a class="btn btn-primary" type="submit" href="/kategori">Submit</a> --}}
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     
 </body>

@@ -1,4 +1,4 @@
-@extends('layout.main');
+@extends('layout.main')
 
 @section('content')
 <main>
@@ -51,20 +51,20 @@
         }
     </style>
 <body>
-    <form>
-        <label for="productName">Nama Barang:</label>
-        <input type="text" id="productName" name="productName" required>
+    <form method="POST" action="{{ route('category.update', $category) }}" enctype="multipart/form-data">
+        @method('PUT')
+        @csrf
+        <label for="kategoriName">Nama Kategori:</label>
+        <input type="text" id="kategoriName" name="nama_kategori" value="{{ old('nama_kategori', $category->nama_kategori) }}">
 
-        <label for="productDescription">Harga Barang:</label>
-        <input type="text" id="productDescription" name="productDescription" required>
-
-        <label for="productQuantity">Stock:</label>
-        <input type="number" id="productQuantity" name="productQuantity" required>
-
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    
 </body>
 </div>
 </div>
 </main>
+
+
 @endsection
+
