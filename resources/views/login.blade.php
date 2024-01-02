@@ -38,7 +38,7 @@
                             <div class="col-lg-5 mt-5">
                                 <div class="card shadow-lg border-5 rounded-lg mt-5">
                                     <div class="card-header">
-                                        <img src="{{ asset('image/toko.svg') }}" alt="images" style="max-width: 60px; display: block; margin: 0 auto;" />
+                                        <img src="{{ asset('image/Ikon_Toko.svg') }}" alt="images" style="max-width: 60px; display: block; margin: 0 auto;" />
                                         <h4 class="text-center font-weight-light my-1">TOKO INDAH KAYLA</h4>
                                     </div>
                                     <div class="card-body mt-4">

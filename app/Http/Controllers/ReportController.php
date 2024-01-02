@@ -9,6 +9,7 @@ use PDF;
 
 class ReportController extends Controller
 {
+    
     public function index()
     {
         $kasir = Kasir::get();

@@ -1,5 +1,3 @@
-@extends('layout.main')
-
 @section('content')
 <main>
     <div class="container-fluid px-4">
@@ -51,11 +49,13 @@
         }
     </style>
 <body>
-    <form method="POST" action="{{ route('category.update', $category) }}" enctype="multipart/form-data">
-        @method('PUT')
+    <form action="{{ isset($kategori) ? route('kategori.tambah.update',$kategori->id): route('kategori.tambah.simpan') }}" method="post">
         @csrf
-        <label for="kategoriName">Nama Kategori:</label>
-        <input type="text" id="kategoriName" name="nama_kategori" value="{{ old('nama_kategori', $category->nama_kategori) }}">
+        <label for="kode_kategori">Kode Kategori:</label>
+        <input type="text" id="kode_kategori" name="kode_kategori" required>
+
+        <label for="nama_kategori">Nama Kategori:</label>
+        <input type="text" id="nama_kategori" name="nama_kategori" required>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -65,6 +65,4 @@
 </div>
 </main>
 
-
-@endsection
 

@@ -19,15 +19,7 @@
     <div class="container mt-5">
         <h1 style="margin-bottom: 50px">Report</h1>
 
-        <a href="{{ route('print-all-report') }}" class="btn btn-dark" target="__blank">Cetak</a>
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
-            style="margin-top: 50px; float:right">
-            <div class="input-group" style="">
-                <input class="form-control" type="text" placeholder="Cari..." aria-label="Cari..."
-                    aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
+        <a href="{{ route('print-all-report') }}" class="btn btn-dark" target="__blank">Cetak</a><br/>
         <table class="table mt-4">
             <thead>
                 <tr>

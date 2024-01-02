@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Template Faktur Untuk Kasir HTML</title>
+    <title>NOTA BELANJA</title>
 
     <style>
     

@@ -27,6 +27,4 @@ class Kasir extends Model
     {
         return $this->hasMany(DetailPesanan::class);
     }
-
-    
 }
