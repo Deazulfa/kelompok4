@@ -60,7 +60,7 @@ class KasirController extends Controller
                 if ($updatedRows > 0 && $product->stok < 10) {
                     $phone = '6285295323574';
                     $message = 'Perhatian! Stok produk ' . $product->nama_produk . ' kurang dari 10.';
-                    //auth()->user()->notify(new StokNotification($phone, $message));
+                    auth()->user()->notify(new StokNotification($phone, $message));
 
                     Notification::create([
                         'message' => $message

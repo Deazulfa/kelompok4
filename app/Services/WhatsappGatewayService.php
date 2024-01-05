@@ -6,7 +6,7 @@ class WhatsappGatewayService
 {
     public static function sendMessage($phone, $message)
     {
-        $token = '1tuovBXIPcuU_m1t!0NA';
+        $token = 'wbNrKgadfS-DwcC2CpRD'; 
 
         $whatsapp_phone = $phone;
 

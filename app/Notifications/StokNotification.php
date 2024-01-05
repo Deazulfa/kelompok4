@@ -63,10 +63,4 @@ class StokNotification extends Notification implements ShouldBroadcast
 
         return WhatsappGatewayService::sendMessage($whatsappData['target'], $whatsappData['message']);
     }
-
-    // public function sendWhatsApp($notifiable)
-    // {
-    //     $whatsappData = $this->toWhatsApp($notifiable);
-    //     WhatsappGatewayService::sendMessage($whatsappData['phone'], $whatsappData['message']);
-    // }
 }
