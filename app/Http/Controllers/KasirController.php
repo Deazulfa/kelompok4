@@ -54,9 +54,10 @@ class KasirController extends Controller
                     'subtotal' => $subtotal,
                 ]);
 
+                
                 $product = Product::find($productId);
                 $updatedRows = $product->decrement('stok', $jumlahPesanan);
-
+                
                 if ($updatedRows > 0 && $product->stok < 10) {
                     $phone = '6285295323574';
                     $message = 'Perhatian! Stok produk ' . $product->nama_produk . ' kurang dari 10.';

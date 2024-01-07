@@ -28,6 +28,8 @@
                         '<p class="mb-0">' + message.message + '</p>' +
                         '</div>' +
                         '</div>' +
+                        '</div>' +
+                        '</div>' +
                         '</a>';
                     $('#notif').append(notificationHtml);
                 });

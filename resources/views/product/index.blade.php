@@ -55,8 +55,12 @@
     }
 </style>
     <div class="container mt-5">
-        <h1 style="margin-bottom: 50px">Produk</h1>
+        <h1 style="margin-bottom: 20px">Produk</h1>
 
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Perhatian!</strong> Stok barang X sudah habis.
+        </div>
         <a href="{{ route('product.create') }}" class="btn btn-dark">+ Tambah Produk</a>
         <form method="GET" action="" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
             style="margin-top: 50px; float:right">
@@ -108,15 +112,4 @@
             </tbody>
         </table>
     </div>
-    {{-- <script>
-    function addItem() {
-        var kategoriName = document.getElementById('kategoriName').value;
-        var itemList = document.getElementById('itemList');
-        var row = itemList.insertRow();
-        
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);}
-</script> --}}
-@endsection
+    @endsection
